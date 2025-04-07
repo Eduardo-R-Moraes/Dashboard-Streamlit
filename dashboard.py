@@ -56,8 +56,8 @@ col2.plotly_chart(fig_prod, use_container_width=True)
 fig_kind = px.pie(df_filtered, values="Price_in_thousands", names="Manufacturer", title="Faturamento por Marca de Veículo")
 col3.plotly_chart(fig_kind, use_container_width=True)
 
-fuel_efficiency = df_filtered.groupby("Vehicle_type")["Fuel_efficiency"].mean().reset_index()
-fig_rating = px.bar(fuel_efficiency, x="Vehicle_type", y="Fuel_efficiency", title="Eficiência Média por Tipo de Veículo")
+fuel_efficiency = df_filtered.groupby("Model")["Fuel_efficiency"].mean().reset_index()
+fig_rating = px.bar(fuel_efficiency, x="Model", y="Fuel_efficiency", title="Eficiência Média por Modelo")
 col4.plotly_chart(fig_rating, use_container_width=True)
 
 st.markdown("## Recomendação de Carros para um Cliente")
